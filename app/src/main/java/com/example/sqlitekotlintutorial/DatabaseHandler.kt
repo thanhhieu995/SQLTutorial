@@ -1,5 +1,6 @@
 package com.example.sqlitekotlintutorial
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -49,6 +50,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     //method to read data
+    @SuppressLint("Range")
     fun viewEmployee():List<EmpModelClass>{
         val empList:ArrayList<EmpModelClass> = ArrayList<EmpModelClass>()
         val selectQuery = "SELECT  * FROM $TABLE_CONTACTS"
